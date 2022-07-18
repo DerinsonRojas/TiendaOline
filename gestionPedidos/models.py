@@ -1,12 +1,13 @@
+from re import T
 from django.db import models
 
 # Create your models here.
 
 class Clientes(models.Model):
     nombre=models.CharField(max_length=30)
-    direccion=models.CharField(max_length=50)
+    direccion=models.CharField(max_length=50, verbose_name="La dirección")
     email=models.EmailField()
-    telefono=models.CharField(max_length=10)
+    telefono=models.CharField(max_length=10, blank=True, null=True)
 
 class Articulos(models.Model):
     nombre=models.CharField(max_length=30)
